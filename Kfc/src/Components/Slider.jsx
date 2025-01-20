@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react'
-
+import Product from "../Pages/Product"
 import { Link } from 'react-router-dom'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import 'swiper/css';
@@ -68,7 +68,7 @@ function Slider() {
   ]
   return (
     <>
-      <div className='bg-black'>
+      <div className='bg-black sm:ml-6'>
         <Flex direction="row" justifyContent={{ sm: 'center', lg: "left" }} gap={3} pl={{ lg: '200px' }} mb={'50px'}>
           <Box bg="rgb(228,0,43)" width="15px" height="50px" mx="2px"></Box>
           <Box bg="rgb(228,0,43)" width="15px" height="50px" mx="2px"></Box>
@@ -110,30 +110,31 @@ function Slider() {
             {Data.map((ele)=>{
               return(
                 <>
-                   <SwiperSlide className='h-[600px]'> {/* Tailwind class for setting height */}
-              <div className="max-w-sm  border rounded-lg shadow-lg bg-slate-300">
-                <div className="p-4">
-                  <img
-                    src={ele.Image}
-                    alt="Green double couch with wooden legs"
-                    className="rounded-lg"
-                  />
-                  <div className="mt-2 space-y-3">
-                    <h1 className="text-3xl text-red-700 font-bold text-center">{ele.Title}</h1>
-                    <p className='text-center'>
-                      {ele.Para}
-                    </p>
+                <SwiperSlide className='h-[600px] '> {/* Tailwind class for setting height */}
+                  <Link to="/Product">
+                  <div className="max-w-sm  border rounded-lg shadow-lg bg-slate-300">
+                    <div className="p-4">
+                      <img
+                        src={ele.Image}
+                        alt="Green double couch with wooden legs"
+                        className="rounded-lg"
+                      />
+                      <div className="mt-2 space-y-3">
+                        <h1 className="text-3xl text-red-700 font-bold text-center">{ele.Title}</h1>
+                        <p className='text-center'>
+                          {ele.Para}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="p-4 flex justify-between items-center px-8 space-x-2">
+                    <Link className='text-black font-semibold underline'>View Details</Link>
+                      <button className=" text-black px-4 py-2 font-semibold  rounded-2xl border">Apply Offers</button>
+                    </div>
                   </div>
-                </div>
-                <div className="p-4 flex justify-between items-center px-8 space-x-2">
-                <Link className='text-black font-semibold underline'>View Details</Link>
-                  <button className=" text-black px-4 py-2 font-semibold  rounded-2xl border">Apply Offers</button>
-                </div>
-              </div>
-            </SwiperSlide>
-
-                
-                </>
+                  
+                  </Link>
+               </SwiperSlide>
+               </>
               )
             })}
            
@@ -147,3 +148,6 @@ function Slider() {
 }
 
 export default Slider
+
+
+

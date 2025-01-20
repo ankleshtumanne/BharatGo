@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Grid, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import React from 'react'
+// import React from 'react'
 import internation from '../assets/internation burger.jpg'
 import match from '../assets/match.jpg'
 import value from '../assets/value.jpg'
@@ -55,27 +55,20 @@ function BrowseCategory() {
             <Grid templateColumns={{base:'repeat(2, 1fr)',lg:'repeat(4,1fr)'}} w={{base:'90%',lg:'80%'}} m={'auto'} rowGap={6} mb={'120px'}>
             {Data.map((ele,i)=>{
                 return(
-                     <Link to={"/product"}><Card  w={{base:'90%',lg:'90%'}} bg={"rgb(248, 247, 245)"}>
-                     <img src={ele.Image} alt="" className='rounded-t-md'/>   
-                     <Stack m={'auto'} my='6' >
-                         <Heading fontSize={{base:'12px',lg:'14px'}}  fontFamily={'National 2 Condense'} fontWeight={'800'}>{ele.Heading}</Heading>
-                     </Stack> 
-             </Card>
-             </Link>
+                     <Link to={"/product"} key={i}>
+                        <Card  w={{base:'90%',lg:'90%'}} bg={"rgb(248, 247, 245)"}>
+                           <img src={ele.Image} alt="" className='rounded-t-md'/>   
+                            <Stack m={'auto'} my='6' >
+                                <Heading fontSize={{base:'12px',lg:'14px'}}  fontFamily={'National 2 Condense'} fontWeight={'800'}>{ele.Heading}</Heading>
+                            </Stack> 
+                        </Card>
+                     </Link>
                 )
             })}
-               
-
-
-
-
-
-
-
-
-               </Grid>
+            </Grid>
         </>
     )
 }
 
 export default BrowseCategory
+
