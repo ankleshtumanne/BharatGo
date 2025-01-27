@@ -9,7 +9,7 @@ function Cart() {
   const [orderSuccess, setOrderSuccess] = useState(false); // State for success message
   const navigate = useNavigate();
 
-  // Fetch the cart items from the server
+  
   async function fetchCart() {
     try {
       let res = await fetch("https://carbonated-florentine-collard.glitch.me/Cart");
@@ -75,7 +75,7 @@ function Cart() {
     return total + subtotal + parseFloat(GST(itemPrice)) + donation;
   }, 0);
 
-  // Handle checkout
+  // Handle c00000
   const handleCheckout = () => {
     // Simulate a successful order
     setOrderSuccess(true);

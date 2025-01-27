@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react'
-import Product from "../Pages/Product"
+// import Product from "../Pages/Product"
 import { Link } from 'react-router-dom'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import 'swiper/css';
